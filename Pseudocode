@@ -1,0 +1,120 @@
+#Pseudocode
+A breakdown of the methods and their organization.
+
+///////////////////////////////////////////////////////////////////
+// Constants
+///////////////////////////////////////////////////////////////////
+
+LOGIN_GRANTED = 1
+LOGIN_DENIED = 0
+
+MENU_QUIT = 0
+MENU_LOGIN = 1
+MENU_LOGOUT = 2
+MENU_PLAY = 3
+MENU_SCORECARD = 4
+MENU_LEADERBOARD = 5
+
+///////////////////////////////////////////////////////////////////
+// Global Variables
+///////////////////////////////////////////////////////////////////
+ActiveUser = ""
+
+///////////////////////////////////////////////////////////////////
+// File Handling
+///////////////////////////////////////////////////////////////////
+
+// reads information from a file described by the filePath and returns the entire file as a string
+// PARAMETERS: filePath as string 
+// RETURNS: string
+Def readFile(filePath) :
+
+// counts the number of unique lines contained in a sourceString
+// PARAMETERS: sourceString as string
+// RETURNS: integer
+Def countLines(sourceString):
+
+// returns a string representing a specific line within the passed sourceString
+// new lines are indicated with a line break '/n'
+// PARAMETERS: sourceString as string, lineNumber as integer
+// RETURNS: string
+Def getLine(sourceString, lineNumber):
+
+///////////////////////////////////////////////////////////////////
+// User management
+///////////////////////////////////////////////////////////////////
+
+// adds a user to the userLog.bin file.
+// PARAMETERS: userName as string, pwd as string
+// RETURNS: True if user is added to file, False if unable to add user.
+Def addUser(userName, pwd):
+
+// checks if the userName and password are stored in the userLog.bin file.
+// PARAMETERS: userName as string, pwd as string
+// RETURNS: Boolean True if user is in file and password matches, False if user is not found in the file.
+Def validateUser(userName, pwd):
+
+///////////////////////////////////////////////////////////////////
+// Score reporting
+///////////////////////////////////////////////////////////////////
+
+// adds integer score to user's record in scores.bin
+// PARAMETERS:  userName as string, score as integer
+// RETURNS: Boolean True if successfully added, False if unable to add record to file.
+Def addScore(userName, score):
+
+// gets scores from user's record in scores.bin
+// PARAMETERS: userName as string
+// RETURNS: list of integers
+Def getScore(userName):
+
+// displays user's scores on a scorecard.
+// PARAMETERS: userName as string
+Def  displayScorecard(userName):
+
+// displays leader board by averaging each user's scorecard.
+Def displayLeaderboard():
+
+///////////////////////////////////////////////////////////////////
+// Math Game
+///////////////////////////////////////////////////////////////////
+
+// Generates 8 simple math problems: two each of addition, subtraction, multiplication, division.
+// Scores are reported as the amount of time in seconds it takes to solve all 8 problems.
+// RETURNS: integer score
+Def playGame():
+
+///////////////////////////////////////////////////////////////////
+// Menu
+///////////////////////////////////////////////////////////////////
+
+// display choices to users depending on if user is logged in.
+// If activeUser="" then only show login and quit options.
+// If activeUser!="" then welcome logged in user and display logout and menu options.
+// Validate user input and return user choice
+// menu options: login/logout, play game, display scores, quit
+Def Menu ():
+
+// display login screen, create new user, validate user login
+// SETS GLOBAL: activeUser
+Def menu_Login():
+
+// resets active user to empty string
+// SETS GLOBAL: activeUser=""
+Def menu_Logout():
+
+// starts game
+Def menu_startGame():
+
+// shows user scorecard
+Def menu_scorecard():
+
+// shows leaderboard
+Def menu_leaderboard():
+
+///////////////////////////////////////////////////////////////////
+// Main Game Loop
+///////////////////////////////////////////////////////////////////
+
+// display menu and process menu options
+Def Main():
