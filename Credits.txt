@@ -1,0 +1,6 @@
+#Credits
+The following people worked on this program in the described capacities.
+
+Daniel Pistorino - Architect
+
+--Programmers--
