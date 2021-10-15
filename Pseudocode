@@ -49,11 +49,12 @@ Def getLine(sourceString, lineNumber):
 // PARAMETERS: userName as string, pwd as string
 // RETURNS: True if user is added to file, False if unable to add user.
 Def addUser(userName, pwd):
-
+Andrei
 // checks if the userName and password are stored in the userLog.bin file.
 // PARAMETERS: userName as string, pwd as string
 // RETURNS: Boolean True if user is in file and password matches, False if user is not found in the file.
 Def validateUser(userName, pwd):
+Andrei
 
 ///////////////////////////////////////////////////////////////////
 // Score reporting
