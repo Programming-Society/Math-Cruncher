@@ -28,6 +28,7 @@ ActiveUser = ""
 // PARAMETERS: filePath as string 
 // RETURNS: string
 Def readFile(filePath) :
+Daniel Pistorino
 
 // counts the number of unique lines contained in a sourceString
 // PARAMETERS: sourceString as string
