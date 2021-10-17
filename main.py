@@ -1,6 +1,62 @@
 import random
 import datetime
 
+
+
+'''
+User Management created by Andrei Ursu
+
+Waiting for the readFile method.
+'''
+def validateUser(userName, pwd):
+	#data = readFile("userLog.bin")
+	valid = True
+	try:
+		with open("userLog.bin","r") as file:
+			if userName and pwd in file.read():
+				print("They are in the file")
+			else:
+				print("User not found.")
+				valid = False
+	except IOError:
+		valid = False
+
+	return valid
+
+def addUser(userName, pwd):
+	success = True
+	exists = validateUser(userName, pwd)
+	#data = readFile("userLog.bin")
+
+	while(exists != True):
+		try:
+			with open("userLog.bin","a") as file:
+					s_arg = "<USER>\n userName="+userName+"\n password="+pwd+"\n</USER>\n"
+					file.write(s_arg)
+					exists = True
+					break
+		except IOError:
+			print("Unable to open file.")
+			success = False
+
+	return success
+
+'''
+addUser("andreiu","cheese1")
+
+print(validateUser("andreiu","cheese1"))
+
+print("\n")
+valid = validateUser("andreiu","cheese1")
+print("Valid",str(valid))
+
+print("\n")
+print(validateUser("michaelg","poop1"))
+'''
+
+
+
+
 def playGame(probluem):
 	int1 = random.Randint(0, 100)
 	int2 = random.Randint(0, 100)
@@ -62,6 +118,11 @@ endTime = datetime.datetime.now().time()
 
 playTime = endTime - startTime
 print(playTime)
+
+
+
+
+
 
 
 
